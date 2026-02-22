@@ -1,0 +1,28 @@
+[package]
+name = "sp-node"
+version = "0.1.0"
+edition = "2021"
+description = "P2P node implementation for the Social Production network"
+
+[[bin]]
+name = "sp-node"
+path = "src/main.rs"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+thiserror = { workspace = true }
+futures = { workspace = true }
+async-trait = { workspace = true }
+bincode = { workspace = true }
+rand = { workspace = true }
+libp2p = { workspace = true }
+libp2p-identity = { workspace = true }
+clap = { workspace = true }
+sp-transaction = { workspace = true }
+sp-merkle = { workspace = true }
+sp-blockchain = { workspace = true }
+sp-sync = { workspace = true }

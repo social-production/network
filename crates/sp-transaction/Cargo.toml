@@ -1,0 +1,15 @@
+[package]
+name = "sp-transaction"
+version = "0.1.0"
+edition = "2021"
+description = "Transaction types for the Social Production P2P network"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+thiserror = { workspace = true }
+bincode = { workspace = true }
+sha2 = { workspace = true }
+hex = { workspace = true }

@@ -1,0 +1,13 @@
+[package]
+name = "sp-merkle"
+version = "0.1.0"
+edition = "2021"
+description = "Merkle tree implementation for Social Production transactions"
+
+[dependencies]
+serde = { workspace = true }
+sha2 = { workspace = true }
+thiserror = { workspace = true }
+hex = { workspace = true }
+uuid = { workspace = true }
+sp-transaction = { workspace = true }

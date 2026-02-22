@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+    "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  macOS launchd service for the Social Production Network node.
+
+  Installed to: ~/Library/LaunchAgents/com.socialproduction.spnode.plist
+  Load:         launchctl load ~/Library/LaunchAgents/com.socialproduction.spnode.plist
+  Unload:       launchctl unload ~/Library/LaunchAgents/com.socialproduction.spnode.plist
+
+  The placeholder INSTALL_PREFIX is replaced with the actual prefix
+  (default /usr/local) by install.sh at install time.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.socialproduction.spnode</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>INSTALL_PREFIX/bin/sp-node</string>
+        <string>--quiet</string>
+    </array>
+
+    <!-- Start automatically when the user logs in. -->
+    <key>RunAtLoad</key>
+    <true/>
+
+    <!-- Restart the process if it exits. -->
+    <key>KeepAlive</key>
+    <true/>
+
+    <!-- Throttle restarts to avoid tight crash loops. -->
+    <key>ThrottleInterval</key>
+    <integer>10</integer>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/sp-node.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/tmp/sp-node.err</string>
+</dict>
+</plist>

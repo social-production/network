@@ -1,0 +1,11 @@
+[package]
+name = "sp-sync"
+version = "0.1.0"
+edition = "2021"
+description = "Granular sync strategies for Social Production P2P network"
+
+[dependencies]
+serde = { workspace = true }
+thiserror = { workspace = true }
+sp-blockchain = { workspace = true }
+sp-transaction = { workspace = true }

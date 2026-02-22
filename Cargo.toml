@@ -1,0 +1,51 @@
+[workspace]
+members = [
+    "crates/sp-transaction",
+    "crates/sp-merkle",
+    "crates/sp-blockchain",
+    "crates/sp-sync",
+    "crates/sp-node",
+    "crates/sp-tui",
+]
+resolver = "2"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+uuid = { version = "1", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+sha2 = "0.10"
+thiserror = "2"
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+libp2p = { version = "0.56", features = [
+    "gossipsub",
+    "kad",
+    "mdns",
+    "ping",
+    "request-response",
+    "tcp",
+    "noise",
+    "yamux",
+    "tokio",
+    "identify",
+    "macros",
+] }
+libp2p-identity = "0.2"
+futures = "0.3"
+async-trait = "0.1"
+bincode = "1"
+rand = "0.8"
+hex = "0.4"
+ratatui = "0.30"
+crossterm = "0.28"
+anyhow = "1"
+clap = { version = "4", features = ["derive", "env"] }
+
+# Internal crates
+sp-transaction = { path = "crates/sp-transaction" }
+sp-merkle = { path = "crates/sp-merkle" }
+sp-blockchain = { path = "crates/sp-blockchain" }
+sp-sync = { path = "crates/sp-sync" }
+sp-node = { path = "crates/sp-node" }

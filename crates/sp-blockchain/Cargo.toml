@@ -1,0 +1,15 @@
+[package]
+name = "sp-blockchain"
+version = "0.1.0"
+edition = "2021"
+description = "Blockchain for Social Production P2P network"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+sha2 = { workspace = true }
+chrono = { workspace = true }
+thiserror = { workspace = true }
+hex = { workspace = true }
+sp-transaction = { workspace = true }
+sp-merkle = { workspace = true }

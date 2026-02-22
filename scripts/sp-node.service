@@ -1,0 +1,45 @@
+[Unit]
+Description=Social Production Network Node
+Documentation=https://github.com/communism/social-production/network
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=sp-node
+Group=sp-node
+ExecStart=/usr/local/bin/sp-node
+Restart=on-failure
+RestartSec=5s
+
+# Environment overrides — uncomment and adjust as needed.
+# Environment=SPN_PORT=51025
+# Environment=SPN_MODE=full
+# Environment=SPN_DISCOVERY=kademlia
+# Environment=SPN_SYNC=on-demand
+# Environment=SPN_DISCOVERY_PORT_MIN=1024
+# Environment=SPN_DISCOVERY_PORT_MAX=65535
+
+# Security hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+RestrictNamespaces=true
+
+# Allow sp-node to write its data directory.
+# Adjust the path if you change the user's home.
+ReadWritePaths=/var/lib/sp-node
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=sp-node
+
+[Install]
+WantedBy=multi-user.target
