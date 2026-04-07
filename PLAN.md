@@ -495,6 +495,7 @@ As such, not all the files in the content structure will be filled. Here is what
 
 ```json
 {
+  "title": "<title of the funds>",
   "amount": 12345.67,
   "currency": "USD",
   "committed": [
