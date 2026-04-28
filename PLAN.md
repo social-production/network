@@ -75,7 +75,7 @@ We use the **known_address** later to directly connect with the node for process
 
 The **last_seen** file will help us filter out peer nodes that have not been seen in a while, to see the most recent, etc.
 
-#### Content
+## Database
 
 Content in Social Production will be content addressable and stored on the local file system. This pertains to everything that is considered the database.
 
@@ -96,7 +96,7 @@ The way that this works is that we have `~/.socplan/database` as the base direct
 
 Below are the types of content we expect and how the structure is affected.
 
-##### An asset
+### An asset
 
 An asset is the most base type of content. It is used to store media such as an image, movie, etc.
 
@@ -106,13 +106,13 @@ The structure of an asset is like:
   - type
   - body
 
-###### type
+#### type
 
 ```json
 "asset"
 ```
 
-###### meta
+#### meta
 
 ```json
 {
@@ -120,59 +120,59 @@ The structure of an asset is like:
 }
 ```
 
-###### body
+#### body
 
 ```plaintext
 <the body of the asset, base64 encoded>
 ```
 
-###### tags
+#### tags
 
 ```json
 []
 ```
 
-###### channels
+#### channels
 
 ```json
 []
 ```
 
-###### votes
+#### votes
 
 ```json
 []
 ```
 
-###### comments
+#### comments
 
 Empty
 
-###### updates
+#### updates
 
 ```json
 []
 ```
 
-###### members
+#### members
 
 ```json
 []
 ```
 
-###### events
+#### events
 
 ```json
 []
 ```
 
-###### fund
+#### fund
 
 ```json
 {}
 ```
 
-###### transactions
+#### transactions
 
 ```json
 []
@@ -196,13 +196,13 @@ A thread is a type of content that:
 
 As such, not all the files in the content structure will be filled. Here is what it should look like.
 
-###### type
+#### type
 
 ```json
 "thread"
 ```
 
-###### meta
+#### meta
 
 ```json
 {
@@ -213,25 +213,25 @@ As such, not all the files in the content structure will be filled. Here is what
 }
 ```
 
-###### body
+#### body
 
 ```plaintext
 <the body of the thread as markdown>
 ```
 
-###### tags
+#### tags
 
 ```json
 ["tag1", "tag2", "tag3", "etc"]
 ```
 
-###### channels
+#### channels
 
 ```json
 ["channel1", "channel2", "etc"]
 ```
 
-###### votes
+#### votes
 
 ```json
 [
@@ -242,37 +242,37 @@ As such, not all the files in the content structure will be filled. Here is what
 ]
 ```
 
-###### comments
+#### comments
 
 ```json
 ["<uuid of comment>", "<uuid of comment>", "<uuid of comment>"]
 ```
 
-###### updates
+#### updates
 
 ```json
 []
 ```
 
-###### members
+#### members
 
 ```json
 []
 ```
 
-###### events
+#### events
 
 ```json
 []
 ```
 
-###### fund
+#### fund
 
 ```json
 {}
 ```
 
-###### transactions
+#### transactions
 
 ```json
 []
@@ -295,13 +295,13 @@ A comment is a type of content that:
 
 As such, not all the files in the content structure will be filled. Here is what it should look like.
 
-###### type
+#### type
 
 ```json
 "comment"
 ```
 
-###### meta
+#### meta
 
 ```json
 {
@@ -313,25 +313,25 @@ As such, not all the files in the content structure will be filled. Here is what
 }
 ```
 
-###### body
+#### body
 
 ```plaintext
 <the body of the comment as markdown>
 ```
 
-###### tags
+#### tags
 
 ```json
 []
 ```
 
-###### channels
+#### channels
 
 ```json
 []
 ```
 
-###### votes
+#### votes
 
 ```json
 [
@@ -342,37 +342,37 @@ As such, not all the files in the content structure will be filled. Here is what
 ]
 ```
 
-###### comments
+#### comments
 
 ```json
 ["<uuid of comment>", "<uuid of comment>", "<uuid of comment>"]
 ```
 
-###### updates
+#### updates
 
 ```json
 []
 ```
 
-###### members
+#### members
 
 ```json
 []
 ```
 
-###### events
+#### events
 
 ```json
 []
 ```
 
-###### fund
+#### fund
 
 ```json
 {}
 ```
 
-###### transactions
+#### transactions
 
 ```json
 []
@@ -401,13 +401,13 @@ A comment is a type of content that:
 
 As such, not all the files in the content structure will be filled. Here is what it should look like.
 
-###### type
+#### type
 
 ```json
 "project"
 ```
 
-###### meta
+#### meta
 
 ```json
 {
@@ -419,25 +419,25 @@ As such, not all the files in the content structure will be filled. Here is what
 }
 ```
 
-###### body
+#### body
 
 ```plaintext
 <the body of the comment as markdown>
 ```
 
-###### tags
+#### tags
 
 ```json
 ["tag1", "tag2"]
 ```
 
-###### channels
+#### channels
 
 ```json
 ["channel1", "channel2"]
 ```
 
-###### votes
+#### votes
 
 ```json
 [
@@ -448,13 +448,13 @@ As such, not all the files in the content structure will be filled. Here is what
 ]
 ```
 
-###### comments
+#### comments
 
 ```json
 ["<uuid of comment>", "<uuid of comment>", "<uuid of comment>"]
 ```
 
-###### updates
+#### updates
 
 ```json
 [
@@ -466,13 +466,13 @@ As such, not all the files in the content structure will be filled. Here is what
 ]
 ```
 
-###### members
+#### members
 
 ```json
 ["<public key of user>", "<public key of user>"]
 ```
 
-###### events
+#### events
 
 ```json
 [
@@ -491,7 +491,7 @@ As such, not all the files in the content structure will be filled. Here is what
 ]
 ```
 
-###### fund
+#### fund
 
 ```json
 {
@@ -507,7 +507,7 @@ As such, not all the files in the content structure will be filled. Here is what
 }
 ```
 
-###### transactions
+#### transactions
 
 ```json
 [
@@ -519,3 +519,34 @@ As such, not all the files in the content structure will be filled. Here is what
   }
 ]
 ```
+
+## Blockchain
+
+A blockchain is necessary as a signal for changes and a record to keep the change history idempotent across the network.
+
+There are some key features which must be encoroporated into a network node
+
+- Storage: where the blockchain components are stored
+- Modification: adding new blocks to the blockchain
+- Syncronization: syncing the blockchain with other peers
+- Verification: verifying incoming blocks
+- Resolution: making determinations on whether a blockchain is valid or not and handling forks
+
+### Storage
+
+Like many of the node components, the blockchain is stored on the file system at `~/.socplan/blockchain`. Here are the components:
+
+- `~/.socplan/blockchain/transactions`: where transactions are stored before being gathered into blocks
+- `~/.socplan/blockchain/blocks`: where blocks are stored
+
+#### Transactions
+
+Transactions are considered emphemeral in that, they are only there waiting for a future block to be created. When a new block is created, they are transferred to the block and cleared out of the general storage area.
+
+### Modification
+
+### Syncronization
+
+### Verification
+
+### Resolution
